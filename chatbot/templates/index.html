@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Chatbot</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Financial Chatbot</h1>
+    <h3>Sample questions</h3>
+    <p>net income of microsoft in 2023</p>
+    <p>total assets of apple in 2022</p>
+    <p>total revenue of tesla in 2021</p><br>
+
+    <table>
+        <tr>
+          <th>Companies</th>
+          <th>Year</th>
+          <th>Available Data</th>
+        </tr>
+        <tr>
+          <td>Microsoft</td>
+          <td>2023</td>
+          <td>Total Revenue</td>
+        </tr>
+        <tr>
+          <td>Tesla</td>
+          <td>2022</td>
+          <td>Net Income</td>
+        </tr>
+        <tr>
+          <td>Apple</td>
+          <td>2021</td>
+          <td>Total Assets</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Total Liabilities</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Cash Flow From Operation Activities</td>
+        </tr>
+      </table><br>
+    
+    <form method="POST">
+        <label for="query">Ask a financial question:</label><br>
+        <input type="text" id="query" name="query"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if user_query %}
+        <h2>Your query: {{ user_query }}</h2>
+        <h1>Response: {{ response }}</h1>
+    {% endif %}
+</body>
+</html>
